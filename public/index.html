@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD NODEJS EXPRESS MYSQL</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!----------------------------->
+    <!-- VENTANA MODAL DE LISTADO-->
+    <!----------------------------->
+    <div class="modal-container">
+        <div class="modal-content">
+            <h2>Listado</h2>
+            <div class="tabla"></div>
+            <div class="close">
+                <p>Salir</p>
+            </div>
+        </div>
+    </div>
+    <!------------------------------->
+
+    <!-- BOTÓN PARA DROP TABLE -->
+    <input type="button" value="Borrar Tabla" onclick="dropTable()">
+
+    <!-- ENCABEZADO -->
+    <h1>PRODUCTOS</h1>
+
+    <!-- SECCIÓN DE BÚSQUEDA -->
+    <section id="area_busqueda">
+        <div class="busqueda">
+            <input type="text" id="aBuscar">
+            <img src="buscar.png" onclick="busqueda()">
+        </div>
+        <input type="button" value="Salir de búsqueda" id="salir_busqueda" onclick="salir_busqueda()">
+    </section>
+    
+    <!-- SECCIÓN PARA AGREGAR / EDITAR PRODUCTO -->
+    <section id="agrego">
+        <h2 id="titulo">Nuevo Producto</h2>
+        <label for="desc" class="lblclass">Descripción</label>
+        <input type="text" id="desc"><br>
+        <label for="imagen" class="lblclass">Dirección de imagen</label>
+        <input type="text" id="dirImg"><br>
+        <label for="precio" class="lblclass">Precio</label>
+        <input type="number" id="precio" style="text-align: right;"><br>
+        <div class="botones">
+            <input type="button" value="Agregar" id="btn_uno" onclick="agregar()">
+            <input type="button" value="Listado" id="btn_dos" onclick="listado()">
+        </div>
+        <a href="https://revistabyte.es/recomendamos/productos-tic-mas-vendidos-amazon/" target="_blank">fuente de
+            productos (ejemplo)</a>
+    </section>
+
+    <!-- SECCIÓN PARA LA PRESENTACIÓN DE LOS PRODUCTOS -->
+    <div class="contenedor">
+        <section id="producto">
+        </section>
+    </div>
+    <!-- SCRIPT PARA EL ALERT MEJORADO -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="js/productos.js"></script>
+
+    <!-- SCRIPT PARA LA VENTANA MODAL DEL LISTADO -->
+    <script src="js/modal.js"></script>
+</body>
+
+</html>
